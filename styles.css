@@ -1,0 +1,670 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9fafb;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Login Screen */
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f0fdf4, #d1fae5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.login-box {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 28rem;
+}
+
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-header svg {
+    width: 3rem;
+    height: 3rem;
+    color: #25ff35;
+    margin-right: 0.75rem;
+}
+
+.login-header h1 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #25ff35;
+    box-shadow: 0 0 0 3px rgba(37, 255, 53, 0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: #25ff35;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #1fe02e;
+}
+
+.btn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.login-info {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+    background-color: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+}
+
+/* Header */
+.header {
+    background-color: #25ff35;
+    color: #000;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left svg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header-subtitle {
+    color: #1f2937;
+    font-size: 0.875rem;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    background-color: #1fe02e;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #000;
+}
+
+.btn-logout:hover {
+    background-color: #19c926;
+}
+
+.btn-logout svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Save Indicator */
+.save-indicator {
+    position: fixed;
+    top: 5rem;
+    right: 1.5rem;
+    background-color: #25ff35;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    animation: fadeIn 0.3s;
+    z-index: 1000;
+}
+
+.save-indicator svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tabs */
+.tabs {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #4b5563;
+}
+
+.tab:hover {
+    color: #1f2937;
+}
+
+.tab.active {
+    color: #000;
+    border-bottom-color: #25ff35;
+}
+
+.tab svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+}
+
+.section-title svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #25ff35;
+    margin-right: 0.75rem;
+}
+
+.btn-add {
+    display: flex;
+    align-items: center;
+    background-color: #25ff35;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #1fe02e;
+}
+
+.btn-add svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Back Button */
+.back-btn {
+    background: none;
+    border: none;
+    color: #25ff35;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+.back-btn:hover {
+    color: #1fe02e;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #25ff35;
+}
+
+.card-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    flex: 1;
+}
+
+.card-subtitle {
+    color: #4b5563;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.card-info {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.card-stats {
+    color: #4b5563;
+}
+
+.card-stats svg {
+    width: 1rem;
+    height: 1rem;
+    display: inline;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+}
+
+.status-complete {
+    color: #16a34a;
+    font-weight: 500;
+}
+
+.status-incomplete {
+    color: #ea580c;
+    font-weight: 500;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s;
+}
+
+.btn-delete:hover {
+    color: #dc2626;
+}
+
+.btn-delete svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Student Card */
+.student-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.student-card.graded {
+    border: 2px solid #25ff35;
+}
+
+.student-card.not-graded {
+    border: 2px solid #fb923c;
+}
+
+.student-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.student-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.student-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.status-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+}
+
+.status-dot.graded {
+    background-color: #25ff35;
+}
+
+.status-dot.not-graded {
+    background-color: #fb923c;
+}
+
+.grade-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #25ff35;
+}
+
+.grade-remark {
+    font-size: 0.875rem;
+    color: #4b5563;
+    font-style: italic;
+}
+
+.no-grade {
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Teacher Card */
+.teacher-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(37, 255, 53, 0.3);
+}
+
+/* Students List */
+.students-section {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.students-section h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+.student-item {
+    padding: 0.75rem;
+    background-color: #f9fafb;
+    border-radius: 0.375rem;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.student-item p {
+    color: #1f2937;
+}
+
+.student-item .btn-delete svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 28rem;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-close:hover {
+    color: #374151;
+}
+
+.btn-close svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+
+textarea.form-input {
+    resize: vertical;
+    font-family: inherit;
+}
+
+.help-text {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+/* Class Assignment */
+.class-assignment {
+    margin-bottom: 0.75rem;
+}
+
+.class-assignment label {
+    display: block;
+    font-size: 0.75rem;
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+}
+
+.class-assignment select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+}
+
+.class-assignment select:focus {
+    outline: none;
+    border-color: #25ff35;
+    box-shadow: 0 0 0 3px rgba(37, 255, 53, 0.1);
+}
+
+/* Teacher Classes List */
+.teacher-classes {
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+.teacher-classes p {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.teacher-classes ul {
+    list-style: none;
+}
+
+.teacher-classes li {
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+}
+
+.no-classes {
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .students-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
